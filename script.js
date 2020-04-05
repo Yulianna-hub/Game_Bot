@@ -23,7 +23,6 @@ if(hello == false) {
     alert('Игра окончена!');
 }
 return (function checkNumber() {
-    debugger;
  if (hello == true) {  
 x = prompt('Угадай число от 1 до 100.');
 if (number < x) {
