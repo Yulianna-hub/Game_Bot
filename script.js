@@ -18,7 +18,7 @@ let number = getRandomNum(1, 100);
 console.log(number);
 let hello = confirm('Hola, amigo!! Поиграем?');
 if(!hello) {
-    alert('Игра окончена!');
+   return alert('Игра окончена!');
 }
 if (hello) {
     alert('Угадай число от 1 до 100.');
