@@ -25,29 +25,54 @@ if (hello) {
 }
 return (function checkNumber() {
 let x = prompt('Угадай число.');
-if (number < x) {
-    alert('Загаданное число меньше. Введи новое число!');
-    return checkNumber();
-    } else if (number > x) {
-    alert('Загаданное число больше. Введи новый вариант!');
-    return checkNumber();
-    } else if (number == x) {
-    alert('Поздравляю! Вы угадали!');
-    let convey = confirm('Хотите сыграть еще?');
-        if (convey == true) {
-            guessedNumber();
-        }else if (convey == false) {
-            alert('Игра окончена!');
-        }
-    
-    } else if (!isNumber(x)) {
-        alert('Введи число!');
+if (isNumber(x)) {
+    if (number < x) {
+        alert('Загаданное число меньше. Введи новое число!');
         return checkNumber();
+        } else if (number > x) {
+        alert('Загаданное число больше. Введи новый вариант!');
+        return checkNumber();
+        } else if (number == x) {
+        alert('Поздравляю! Вы угадали!');
+        let convey = confirm('Хотите сыграть еще?');
+            if (convey == true) {
+                guessedNumber();
+            }else if (convey == false) {
+                alert('Игра окончена!');
+            }
+        }
     } else if (x === null){
         alert('Игра окончена!');
-    }
+    } else {
+        alert('Введи число!');
+         checkNumber();
+    }    
 
 }()); 
 }
 guessedNumber();
+
+/*if (isNumber(x)) {
+    if (number < x) {
+        alert('Загаданное число меньше. Введи новое число!');
+        checkNumber();
+    } else if (number > x) {
+        alert('Загаданное число больше. Введи новый вариант!');
+        checkNumber();
+    } else if (number == x) {
+        alert('Поздравляю! Вы угадали!');
+        let convey = confirm('Хотите сыграть еще?');
+        if (convey == true) {
+            guessedNumber();
+        } else if (convey == false) {
+            alert('Игра окончена!');
+        }
+
+    }
+} else if (x === null) {
+    alert('Игра окончена!');
+} else {
+    alert('Введи число!');
+    checkNumber();
+}*/
 
