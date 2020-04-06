@@ -4,7 +4,7 @@ const isNumber = function(n) {
     return !isNaN(parseFloat(n)) && isFinite(n);
 };
 
-let x;
+
 let number;
 
 const getRandomNum = function(min, max) {
@@ -24,7 +24,7 @@ if (hello) {
     alert('Угадай число от 1 до 100.');
 }
 return (function checkNumber() {
-x = prompt('Угадай число.');
+let x = prompt('Угадай число.');
 if (number < x) {
     alert('Загаданное число меньше. Введи новое число!');
     return checkNumber();
@@ -39,18 +39,15 @@ if (number < x) {
         }else if (convey == false) {
             alert('Игра окончена!');
         }
-        return convey;
     
     } else if (!isNumber(x)) {
         alert('Введи число!');
         return checkNumber();
+    } else if (x === null){
+        alert('Игра окончена!');
     }
-if (null) {
-    alert('Игра окончена!');
-    }  
 
 }()); 
-
 }
 guessedNumber();
 
