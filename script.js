@@ -13,43 +13,44 @@ const getRandomNum = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 };
 
-function guessedNumber() {
-
+function guessedNumber() { 
 let number = getRandomNum(1, 100);
 console.log(number);
-   
 let hello = confirm('Hola, amigo!! Поиграем?');
-if(hello == false) {
+if(!hello) {
     alert('Игра окончена!');
 }
+if (hello) {
+    alert('Угадай число от 1 до 100.');
+}
 return (function checkNumber() {
- if (hello == true) {  
-x = prompt('Угадай число от 1 до 100.');
+x = prompt('Угадай число.');
 if (number < x) {
-    x = prompt('Загаданное число меньше. Введи новое число!'); 
-        checkNumber();
+    alert('Загаданное число меньше. Введи новое число!');
+    return checkNumber();
     } else if (number > x) {
-    x = prompt('Загаданное число больше. Введи новый вариант!');
-        checkNumber();
+    alert('Загаданное число больше. Введи новый вариант!');
+    return checkNumber();
     } else if (number == x) {
     alert('Поздравляю! Вы угадали!');
     let convey = confirm('Хотите сыграть еще?');
         if (convey == true) {
-            checkNumber();
+            guessedNumber();
         }else if (convey == false) {
             alert('Игра окончена!');
         }
         return convey;
     
     } else if (!isNumber(x)) {
-        return prompt('Введи число!');
+        alert('Введи число!');
+        return checkNumber();
     }
-if (x == false) {
-        alert('Игра окончена!');
-         }      
+if (null) {
+    alert('Игра окончена!');
     }  
-}());   
+
+}()); 
+
 }
 guessedNumber();
-
 
